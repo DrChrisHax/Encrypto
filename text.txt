@@ -1,0 +1,11 @@
+Ｗｅ ａｒｅ ｅｘｐｌｏｒｉｎｇ ｔｈｅ ｐｏｗｅｒ ｏｆ ｔｅｘｔ． 
+Ｔｈｉｓ ｉｎｃｌｕｄｅｓ ｕｓｉｎｇ ｗｉｄｅ ｃｈａｒａｃｔｅｒｓ ａｎｄ ａｄｄｉｎｇ ｓｏｍｅ ｆｕｎ 
+ｎｏｎ－ｓｔａｎｄａｒｄ ｃｈａｒａｃｔｅｒｓ ｓｕｃｈ ａｓ ∆, §, ŧ, ǂ, µ, æ, å, œ, and þ. 
+Ｔｈｉｓ ｂｌｏｃｋ ｏｆ ｔｅｘｔ ｉｓ ｄｅｓｉｇｎｅｄ ｔｏ ｄｅｍｏｎｓｔｒａｔｅ ｔｈｅ ｄｉｖｅｒｓｉｔｙ ｏｆ 
+ｆｏｎｔ ｒｅｎｄｅｒｉｎｇ ａｎｄ ｃｈａｒａｃｔｅｒ ｕｓａｇｅ．
+
+We are exploring the power of text.
+This includes using wide characters and adding some fun
+non-standard characters such as ∆, §, ŧ, ǂ, µ, æ, å, œ, and þ.
+This block of text is designed to demonstrate the diversity of
+font rendering and character usage.
