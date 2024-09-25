@@ -1,11 +1,29 @@
-Ｗｅ ａｒｅ ｅｘｐｌｏｒｉｎｇ ｔｈｅ ｐｏｗｅｒ ｏｆ ｔｅｘｔ． 
-Ｔｈｉｓ ｉｎｃｌｕｄｅｓ ｕｓｉｎｇ ｗｉｄｅ ｃｈａｒａｃｔｅｒｓ ａｎｄ ａｄｄｉｎｇ ｓｏｍｅ ｆｕｎ 
-ｎｏｎ－ｓｔａｎｄａｒｄ ｃｈａｒａｃｔｅｒｓ ｓｕｃｈ ａｓ ∆, §, ŧ, ǂ, µ, æ, å, œ, and þ. 
-Ｔｈｉｓ ｂｌｏｃｋ ｏｆ ｔｅｘｔ ｉｓ ｄｅｓｉｇｎｅｄ ｔｏ ｄｅｍｏｎｓｔｒａｔｅ ｔｈｅ ｄｉｖｅｒｓｉｔｙ ｏｆ 
-ｆｏｎｔ ｒｅｎｄｅｒｉｎｇ ａｎｄ ｃｈａｒａｃｔｅｒ ｕｓａｇｅ．
+Here is a bunch of text to ensure the encryption and decryption works
 
-We are exploring the power of text.
-This includes using wide characters and adding some fun
-non-standard characters such as ∆, §, ŧ, ǂ, µ, æ, å, œ, and þ.
-This block of text is designed to demonstrate the diversity of
-font rendering and character usage.
+ASCII: The quick brown fox jumps over the lazy dog 0123456789
+
+Unicode: 
+- Greek: αβγδεζηθικλμνξοπρστυφχψω
+- Cyrillic: АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ
+- Chinese: 你好，世界！
+- Emoji: 😃🎉🚀🐍
+
+Special Characters: ~!@#$%^&*()_+-={}[]:";'<>?,./|\
+
+Whitespace: (space)  (tab)		(newline)
+
+Formatted Text: 
+- Bold: **This is bold**
+- Italic: *This is italic*
+- Underlined: _This is underlined_
+- Strikethrough: ~~This is strikethrough~~
+
+Wide Characters: 
+- Wide Latin: ＡＢＣＤＥＦＧ
+- Fullwidth Punctuation: ！＠＃＄％＾＆＊（）
+
+Miscellaneous:
+- Math Symbols: ∑√∫≈≠≤≥
+- Currency Symbols: €£¥₹
+- Box Drawing: ─│┌┐└┘├┤┬┴
+- Misc Symbols: ☀☁★☎♲

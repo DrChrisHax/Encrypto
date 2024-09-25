@@ -72,3 +72,8 @@ dist/
 *.swp
 *.swo
 *.dir
+
+# Code Generated Files
+encrypto
+encrypted.txt
+plaintext.txt
