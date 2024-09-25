@@ -1,0 +1,74 @@
+# Prerequisites
+*.d
+*.DS_Store
+*.exe
+*.out
+*.log
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Static Libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+*.ipdb
+*.pgd
+
+# VS Code specific files
+.vscode/
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/c_cpp_properties.json
+.vscode/extensions.json
+
+# CMake
+CMakeLists.txt.user
+
+# Folder build and other similar build directories
+build/
+cmake-build-debug/
+cmake-build-release/
+dist/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*.dir
