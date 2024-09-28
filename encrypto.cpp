@@ -8,10 +8,11 @@ const unsigned int k[16] = {
 
 uint32_t keyToNum(const std::string &key) {
 
-    uint32_t x = 0, i = 0;
+    uint32_t x = 0xABCDEF00, i = key[0];
 
     for(const char c : key) {
         x ^= (c ^ k[i % 16]);
+        x = (x << i) | (x >> (32 - i));
         i++;
     }
     return x;

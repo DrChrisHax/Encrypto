@@ -2,6 +2,15 @@
 #include <fstream>
 #include "encrypto.hpp"
 
+void clearTerminal() {
+    //Compiles different based on OS
+#ifdef _WIN32
+    system("cls");
+#else
+    std::cout << "\033[H\033[J";
+#endif
+}
+
 int main(int argc, char* argv[]) {
     std::string key, text;
     std::string keyFilePath, textFilePath;
@@ -36,6 +45,7 @@ int main(int argc, char* argv[]) {
                 bEncrypt = 0;
                 break;
             }
+            //clearTerminal();
             std::cout << "Invalid option. Please select again." << std::endl;
         }
 
@@ -48,6 +58,7 @@ int main(int argc, char* argv[]) {
     //Get the Key
     std::ifstream keyFile(keyFilePath);
     while (!keyFile) {
+        //clearTerminal();
         std::cerr << "Error opening key file! Please enter a valid key file path:" << std::endl;
         std::cin >> keyFilePath;
         keyFile.open(keyFilePath);
@@ -61,6 +72,7 @@ int main(int argc, char* argv[]) {
     //Get the text/cipher
     std::ifstream textFile(textFilePath);
     while (!textFile) {
+        //clearTerminal();
         std::cerr << "Error opening text file! Please enter a valid text file path:" << std::endl;
         std::cin >> textFilePath;
         textFile.open(textFilePath);
@@ -82,6 +94,7 @@ int main(int argc, char* argv[]) {
         outputFile << cipher;
         outputFile.close();
 
+        //clearTerminal();
         std::cout << "Encryption completed. The cipher text has been saved to encrypted.txt" << std::endl;
 
     } else {
@@ -95,9 +108,24 @@ int main(int argc, char* argv[]) {
         outputFile << plaintext;
         outputFile.close();
 
+        //clearTerminal();
         std::cout << "Decryption completed. The plaintext has been saved to plaintext.txt" << std::endl;
     }
 
     return 0;
 }
 
+//Key Gen Testing
+// int main() {
+//     std::cout << "test 0x" << std::hex << keyToNum("test") << std::endl;
+//     std::cout << "TEST 0x" << std::hex << keyToNum("TEST") << std::endl;
+//     std::cout << "key  0x" << std::hex << keyToNum("key") << std::endl;
+//     std::cout << "aa   0x" << std::hex << keyToNum("aa") << std::endl;
+//     std::cout << "a    0x" << std::hex << keyToNum("a") << std::endl;
+//     std::cout << "b    0x" << std::hex << keyToNum("b") << std::endl;
+//     std::cout << "c    0x" << std::hex << keyToNum("c") << std::endl;
+//     std::cout << "d    0x" << std::hex << keyToNum("d") << std::endl;
+//     std::cout << "e    0x" << std::hex << keyToNum("e") << std::endl;
+//     std::cout << "f    0x" << std::hex << keyToNum("f") << std::endl;
+//     std::cout << "     0x" << std::hex << keyToNum("") << std::endl; 
+// }
