@@ -2,12 +2,12 @@
 
 ## Overview
 
-**Encrypto** is a simple encryption and decryption tool written in C++. It uses a custom algorithm to transform text into an encrypted form and then decrypt it back to the original text. The tool is controlled via command line arguments or interactive prompts, making it flexible and easy to use.
+**Encrypto** is a simple encryption and decryption tool written in C++. It uses a custom algorithm to transform a file into an encrypted form and then decrypt it back to the original form. The tool is controlled via command line arguments or interactive prompts, making it flexible and easy to use.
 
 ## Features
 
-- **Encrypt** a text file using a key file.
-- **Decrypt** an encrypted file back to its original text using the same key file.
+- **Encrypt** a file using a key file.
+- **Decrypt** an encrypted file back to its original form using the same key file.
 - The encryption process uses a combination of bit manipulation and hex encoding.
 - The key is processed into a numeric value which is then used for encryption and decryption.
 
@@ -16,7 +16,7 @@
 - `main.cpp`: Handles user interaction and file operations. Reads the key and text files, and calls the encryption or decryption functions.
 - `encrypto.cpp`: Contains the core encryption and decryption logic.
 - `encrypto.hpp`: Header file declaring functions used in `encrypto.cpp`.
-- `Makefile`: Contains commands to compile, clean, and run the project.
+- `Makefile`: Contains commands to compile, clean, and run the project. There is also a test command to verify functionality.
 
 ## Getting Started
 
@@ -97,8 +97,8 @@ There are two ways to use Encrypto:
 
 ### Key and Text File Format
 
-- The **key file** should be a text file containing the encryption key. The key can be multiline and will be processed into a 32-bit unsigned integer.
-- The **text file** should contain the plaintext for encryption or the cipher text for decryption.
+- The **key file** can be any file. The key can be multiline and will be processed into a 32-bit unsigned integer.
+- The **text file** should be the file for encryption or decryption.
 
 ### Output
 
