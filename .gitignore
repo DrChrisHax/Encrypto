@@ -76,4 +76,4 @@ dist/
 # Code Generated Files
 encrypto
 encrypted.txt
-plaintext.txt
+plaintext.*

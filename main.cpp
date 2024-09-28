@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 #include "encrypto.hpp"
 
 void clearTerminal() {
@@ -9,6 +10,28 @@ void clearTerminal() {
 #else
     std::cout << "\033[H\033[J";
 #endif
+}
+
+std::string getFileExtension(const std::string& filePath) {
+    size_t dotPos = filePath.find_last_of('.');
+    if (dotPos == std::string::npos) {
+        return "";
+    }
+    return filePath.substr(dotPos + 1);
+}
+
+std::string getFileNameWithoutExtension(const std::string& filePath) {
+    size_t dotPos = filePath.find_last_of('.');
+    size_t sepPos = filePath.find_last_of("/\\");
+    if (sepPos == std::string::npos) {
+        sepPos = 0;
+    } else {
+        sepPos++;
+    }
+    if (dotPos == std::string::npos) {
+        return filePath.substr(sepPos);
+    }
+    return filePath.substr(sepPos, dotPos - sepPos);
 }
 
 int main(int argc, char* argv[]) {
@@ -83,24 +106,44 @@ int main(int argc, char* argv[]) {
 
     uint32_t numKey = keyToNum(key);   
 
-    if(bEncrypt) {
-       std::string cipher = encrypt(text, numKey);
+        if (bEncrypt) {
+        std::string cipher = encrypt(text, numKey);
+        std::string extension = encrypt(getFileExtension(textFilePath), numKey);
 
         std::ofstream outputFile("encrypted.txt");
         if (!outputFile) {
             std::cerr << "Error creating output file!" << std::endl;
             return 1;
         }
+
+        // Save extension at the beginning
+        outputFile << extension << '\n';
         outputFile << cipher;
         outputFile.close();
 
-        //clearTerminal();
         std::cout << "Encryption completed. The cipher text has been saved to encrypted.txt" << std::endl;
 
     } else {
-        std::string plaintext = decrypt(text, numKey);
+        std::ifstream inputFile("encrypted.txt");
+        if (!inputFile) {
+            std::cerr << "Error opening encrypted file!" << std::endl;
+            return 1;
+        }
 
-        std::ofstream outputFile("plaintext.txt");
+        // Read the extension from the beginning
+        std::string extension;
+        std::getline(inputFile, extension);
+        extension = decrypt(extension, numKey);
+
+        // Read the rest of the file
+        std::string cipher((std::istreambuf_iterator<char>(inputFile)),
+                            std::istreambuf_iterator<char>());
+        inputFile.close();
+
+        std::string plaintext = decrypt(cipher, numKey);
+
+        std::string outputFilePath = "plaintext." + extension;
+        std::ofstream outputFile(outputFilePath);
         if (!outputFile) {
             std::cerr << "Error creating output file!" << std::endl;
             return 1;
@@ -108,8 +151,7 @@ int main(int argc, char* argv[]) {
         outputFile << plaintext;
         outputFile.close();
 
-        //clearTerminal();
-        std::cout << "Decryption completed. The plaintext has been saved to plaintext.txt" << std::endl;
+        std::cout << "Decryption completed. The plaintext has been saved to " << outputFilePath << std::endl;
     }
 
     return 0;

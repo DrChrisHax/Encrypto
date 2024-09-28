@@ -13,7 +13,7 @@ $(EXE): $(OBJ) makefile
 clean:
 		@rm -f $(EXE)
 		@rm -f encrypted.txt
-		@rm -f plaintext.txt
+		@rm -f plaintext.*
 run: $(EXE)
 		@./$(EXE)
 test: $(EXE)
